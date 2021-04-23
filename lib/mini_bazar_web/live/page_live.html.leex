@@ -1,6 +1,6 @@
 
 <section class="miniatures_section" >
-  <h1>Miniaturas artesanales</h1>
+  <h2><i class="fas fa-chess"></i>Miniaturas y figuras de coleccion</h2>
   <div class="carousel" >
     <figure>
       <div class="miniature" ><img src="https://cdn.thingiverse.com/assets/85/d7/b8/5c/8b/featured_preview_Bulbasaur_0.jpg"></div>
@@ -13,19 +13,17 @@
 </section>
 
 
-<section >
-  <h2>Sets artesanales!</h2>
+<section style="--color: var()" >
+  <h2><i class="fas fa-paint-brush"></i>Sets artesanales!</h2>
   <p>Todas nuestros sets de minuaturas son echas y pintadas a mano</p>
   <p>Impresos en resina biodegradable</p>
   <p>Pintura a mano artesanalmente</p>
   
 </section>
 
-<section class="phx-hero">
-  <p>No te pierdas nuestros Drops, Subscribete!</p>
-
-  <p>Pueden ver fechas estimadas de renovacion de stock</p>
-  <p>Nuestros subscriptores son los primeros de enterarse sobre los proximos Sets</p>
+<section style="--color: var(--orange-600);" class="callout" >
+  <hr>
+  <p>No te pierdas nuestros Drops, Subscribete! y recibe un <span >cupon de 15% de descuento</span> en tu primera compra.</p>
 
   <form phx-change="suggest" phx-submit="search">
     <input type="text" name="q" value="<%= @query %>" placeholder="Live dependency search" list="results" autocomplete="off"/>
@@ -34,12 +32,13 @@
         <option value="<%= app %>"><%= app %></option>
       <% end %>
     </datalist>
-    <button type="submit" phx-disable-with="Searching...">Subscibirme</button>
+    <button style="--primary-text: white" type="submit" phx-disable-with="Searching..."><i class="fas fa-envelope-open-text"></i>Subscibirme</button>
   </form>
+  <hr>
 </section>
 
 <section >
-  <h3>Encuentranos en</h3>
+  <h3><i class="fas fa-shipping-fast"></i>Encuentranos en</h3>
   <div class="afiliates" >
     <a href="#ml">Mercado Libre</a>
     <a href="#amazon">Amazon</a>
