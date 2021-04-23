@@ -1,0 +1,47 @@
+
+<section class="miniatures_section" >
+  <h1>Miniaturas artesanales</h1>
+  <div class="carousel" >
+    <figure>
+      <div class="miniature" ><img src="https://cdn.thingiverse.com/assets/85/d7/b8/5c/8b/featured_preview_Bulbasaur_0.jpg"></div>
+      <div class="miniature" ><img src="https://cdn.thingiverse.com/assets/c8/87/d5/2c/90/featured_preview_Charmander_0.png"></div>
+      <div class="miniature" ><img src="https://cdn.thingiverse.com/assets/d6/c8/92/64/9b/featured_preview_Squirtle_0.jpg"></div>
+      <div class="miniature" ><img src="https://cdn.thingiverse.com/assets/67/6b/4b/4f/52/featured_preview_Mudkip_0.jpg"></div>
+      <div class="miniature" ><img src="https://cdn.thingiverse.com/assets/85/d7/b8/5c/8b/featured_preview_Bulbasaur_0.jpg"></div>
+    </figure>
+  <div>
+</section>
+
+
+<section >
+  <h2>Sets artesanales!</h2>
+  <p>Todas nuestros sets de minuaturas son echas y pintadas a mano</p>
+  <p>Impresos en resina biodegradable</p>
+  <p>Pintura a mano artesanalmente</p>
+  
+</section>
+
+<section class="phx-hero">
+  <p>No te pierdas nuestros Drops, Subscribete!</p>
+
+  <p>Pueden ver fechas estimadas de renovacion de stock</p>
+  <p>Nuestros subscriptores son los primeros de enterarse sobre los proximos Sets</p>
+
+  <form phx-change="suggest" phx-submit="search">
+    <input type="text" name="q" value="<%= @query %>" placeholder="Live dependency search" list="results" autocomplete="off"/>
+    <datalist id="results">
+      <%= for {app, _vsn} <- @results do %>
+        <option value="<%= app %>"><%= app %></option>
+      <% end %>
+    </datalist>
+    <button type="submit" phx-disable-with="Searching...">Subscibirme</button>
+  </form>
+</section>
+
+<section >
+  <h3>Encuentranos en</h3>
+  <div class="afiliates" >
+    <a href="#ml">Mercado Libre</a>
+    <a href="#amazon">Amazon</a>
+  </div>
+</section >

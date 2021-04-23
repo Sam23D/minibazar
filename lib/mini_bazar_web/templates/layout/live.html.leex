@@ -1,0 +1,32 @@
+<main role="main" class="container">
+  <p class="alert alert-info" role="alert"
+    phx-click="lv:clear-flash"
+    phx-value-key="info"><%= live_flash(@flash, :info) %></p>
+
+  <p class="alert alert-danger" role="alert"
+    phx-click="lv:clear-flash"
+    phx-value-key="error"><%= live_flash(@flash, :error) %></p>
+
+  <%= @inner_content %>
+
+  <footer class="phx-hero">
+    <article class="footer-social">
+      <h3>Siguenos en:</h3>
+      <ul>
+        <li>
+          <i class="fab fa-instagram-square"></i>
+          <a href="https://elixirforum.com/c/phoenix-forum">Instagram</a>
+        </li>
+        <li>
+          <i class="fab fa-facebook-square"></i>
+          <a href="https://webchat.freenode.net/?channels=elixir-lang">Facebook</a>
+        </li>
+        <li>
+          <i class="fab fa-telegram"></i>
+          <a href="https://twitter.com/elixirphoenix">Telegram</a>
+        </li>
+      </ul>
+    </article>
+  </footer>
+
+</main>
