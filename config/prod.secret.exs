@@ -23,9 +23,9 @@ secret_key_base =
     You can generate one by calling: mix phx.gen.secret
     """
 
-ssl_key_path = System.get_env("SSL_CERT_PATH") || "/etc/letsencrypt/live/minibazar.page/privkey.pem"
-ssl_cert_path = System.get_env("SSL_CERT_PATH") || "/etc/letsencrypt/live/minibazar.page/cert.pem"
-ssl_cacert_path = System.get_env("SSL_CACERT_PATH") || "/etc/letsencrypt/live/minibazar.page/chain.pem"
+ssl_key_path = System.get_env("SSL_CERT_PATH") || raise "environment variable SSL_CERT_PATH is missing."
+ssl_cert_path = System.get_env("SSL_CERT_PATH") || raise "environment variable SSL_CERT_PATH is missing."
+ssl_cacert_path = System.get_env("SSL_CACERT_PATH") || raise "environment variable SSL_CACERT_PATH is missing."
 
 config :mini_bazar, MiniBazarWeb.Endpoint,
   http: [
@@ -39,7 +39,7 @@ config :mini_bazar, MiniBazarWeb.Endpoint,
     otp_app: :mini_bazar,
     keyfile: ssl_key_path,
     certfile: ssl_cert_path,
-    cacertfile: ssl_cacert_path
+    # cacertfile: ssl_cacert_path
   ]
 
 # ## Using releases (Elixir v1.9+)
