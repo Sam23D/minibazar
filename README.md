@@ -1,6 +1,6 @@
 # MiniBazar
 
-To start your Phoenix server:
+To start your Development server:
 
   * Install dependencies with `mix deps.get`
   * Create and migrate your database with `mix ecto.setup`
@@ -9,7 +9,21 @@ To start your Phoenix server:
 
 Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 
-Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
+### Production Release
+To make a release
+```
+POOL_SIZE=4 MIX_ENV=prod iex -S mix release
+```
+To start the server
+```
+_build/prod/rel/mini_bazar/bin/mini_bazar start
+_build/prod/rel/mini_bazar/bin/mini_bazar daemon
+```
+To top the server
+```
+_build/prod/rel/mini_bazar/bin/mini_bazar stop
+```
+
 
 ## Learn more
 
@@ -18,3 +32,4 @@ Ready to run in production? Please [check our deployment guides](https://hexdocs
   * Docs: https://hexdocs.pm/phoenix
   * Forum: https://elixirforum.com/c/phoenix-forum
   * Source: https://github.com/phoenixframework/phoenix
+
