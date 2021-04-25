@@ -11,15 +11,15 @@ use Mix.Config
 # before starting your production server.
 config :mini_bazar, MiniBazarWeb.Endpoint,
   url: [host: "minibazar.page", port: 443],
-  server: true,
   cache_static_manifest: "priv/static/cache_manifest.json",
+  force_ssl: [hsts: true],
+  server: true,
   https: [
     port: 443,
     cipher_suite: :strong,
     otp_app: :mini_bazar,
     keyfile: System.get_env("SSL_KEY_PATH"),
-    certfile: System.get_env("SSL_CERT_PATH"),
-    cacertfile: System.get_env("SSL_CACERT_FILE")
+    certfile: System.get_env("SSL_CERT_PATH")
   ]
 
 # Do not print debug messages in production
