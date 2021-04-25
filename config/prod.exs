@@ -18,7 +18,7 @@ config :mini_bazar, MiniBazarWeb.Endpoint,
     otp_app: :hello,
     keyfile: System.get_env("SSL_KEY_PATH"),
     certfile: System.get_env("SSL_CERT_PATH"),
-    cacertfile: System.get_env("SSL_CACERT_FILE"),
+    cacertfile: System.get_env("SSL_CACERT_FILE")
   ]
 
 # Do not print debug messages in production
