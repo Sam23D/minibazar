@@ -24,7 +24,7 @@ secret_key_base =
     """
 
 ssl_key_path = System.get_env("SSL_KEY_PATH") || raise "environment variable SSL_CERT_PATH is missing."
-ssl_cert_path = System.get_env("SSL_CERT_PATH") raise "environment variable SSL_CERT_PATH is missing."
+ssl_cert_path = System.get_env("SSL_CERT_PATH") || raise "environment variable SSL_CERT_PATH is missing."
 ssl_cacert_path = System.get_env("SSL_CACERT_PATH") || raise "environment variable SSL_CACERT_PATH is missing."
 
 config :mini_bazar, MiniBazarWeb.Endpoint,
