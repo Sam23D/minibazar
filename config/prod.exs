@@ -13,15 +13,7 @@ config :mini_bazar, MiniBazarWeb.Endpoint,
   url: [host: "minibazar.page", port: 443],
   cache_static_manifest: "priv/static/cache_manifest.json",
   force_ssl: [hsts: true],
-  server: true,
-  https: [
-    port: 443,
-    cipher_suite: :strong,
-    otp_app: :mini_bazar,
-    keyfile: System.get_env("SSL_KEY_PATH"),
-    certfile: System.get_env("SSL_CERT_PATH")
-  ]
-
+  server: true
 # Do not print debug messages in production
 config :logger, level: :info
 

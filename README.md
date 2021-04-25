@@ -12,7 +12,7 @@ Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 ### Production Release
 To make a release
 ```
-POOL_SIZE=4 MIX_ENV=prod iex -S mix release
+POOL_SIZE=4 MIX_ENV=prod mix release
 ```
 To start the server
 ```
