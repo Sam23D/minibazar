@@ -10,8 +10,15 @@ use Mix.Config
 # which you should run after static files are built and
 # before starting your production server.
 config :mini_bazar, MiniBazarWeb.Endpoint,
-  url: [host: "http://159.89.186.179", port: 80],
-  cache_static_manifest: "priv/static/cache_manifest.json"
+  url: [host: "minibazar.page", port: 80],
+  cache_static_manifest: "priv/static/cache_manifest.json",
+  https: [
+    port: 443,
+    cipher_suite: :strong,
+    otp_app: :hello,
+    keyfile: System.get_env("SSL_KEY_PATH"),
+    certfile: System.get_env("SSL_CERT_PATH"),
+  ]
 
 # Do not print debug messages in production
 config :logger, level: :info
