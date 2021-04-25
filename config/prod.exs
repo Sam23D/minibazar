@@ -12,8 +12,9 @@ use Mix.Config
 config :mini_bazar, MiniBazarWeb.Endpoint,
   url: [host: "minibazar.page", port: 443],
   cache_static_manifest: "priv/static/cache_manifest.json",
-  force_ssl: [hsts: true],
+  # force_ssl: [hsts: true],
   server: true
+
 # Do not print debug messages in production
 config :logger, level: :info
 
