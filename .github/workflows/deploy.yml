@@ -8,8 +8,8 @@ jobs:
 
     steps:
       - name: ls -a via ssh
-        uses: actions/checkout@v2
-        uses: fifsky/ssh-action@master
+      - uses: actions/checkout@v2
+      - uses: fifsky/ssh-action@master
         with:
           command: |
             ls -a
