@@ -1,0 +1,21 @@
+on: 
+  push:
+    branches: [ master ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.username }}
+          key: ${{ secrets.SSH_KEY }}
+          port: 22
+          script: | 
+            cd repository
+            git pull origin master
+            mix deps.get --only prod
+            MIX_ENV=prod mix compile
+            MIX_ENV=prod mix ecto.migrate
