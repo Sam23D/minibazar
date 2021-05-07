@@ -14,5 +14,5 @@ jobs:
             cd /tmp
             ls -a
           host: ${{ secrets.HOST }}
-          user:${{ secrets.USERNAME }} 
+          user: ${{ secrets.USERNAME }} 
           key: ${{ secrets.SSH_KEY }}
