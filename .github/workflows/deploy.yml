@@ -10,12 +10,13 @@ jobs:
       - uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.HOST }}
-          username: ${{ secrets.username }}
+          username: ${{ secrets.USERNAME }}
           key: ${{ secrets.SSH_KEY }}
           port: 22
           script: | 
-            cd repository
-            git pull origin master
-            mix deps.get --only prod
-            MIX_ENV=prod mix compile
-            MIX_ENV=prod mix ecto.migrate
+            cd minibazar
+            git pull 
+            # mix deps.get --only prod
+            # MIX_ENV=prod mix compile
+            # MIX_ENV=prod mix ecto.migrate
+            whoami
