@@ -11,7 +11,7 @@ jobs:
         uses: fifsky/ssh-action@master
         with:
           command: |
-            cd mini_bazar
+            cd minibazar
             git pull origin master
             mix deps.get --only prod
             MIX_ENV=prod mix compile
