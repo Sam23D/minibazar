@@ -17,6 +17,7 @@ jobs:
           script: |
             cd minibazar
             git pull origin main
+            asdf global elixir 1.11.3
             mix deps.get
             MIX_ENV=prod mix compile
             MIX_ENV=prod mix ecto.migrate
