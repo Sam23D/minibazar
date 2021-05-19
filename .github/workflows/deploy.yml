@@ -8,9 +8,12 @@ jobs:
 
     steps:
       - name: update release  Digital Ocean
-        uses: fifsky/ssh-action@master
+        uses: appleboy/ssh-action@master
         with:
-          command: |
+          host: ${{ secrets.HOST }}
+          user: ${{ secrets.USERNAME }} 
+          key: ${{ secrets.SSH_KEY }}
+          script: |
             ls -a
             cd minibazar
             git pull origin main
@@ -24,6 +27,4 @@ jobs:
             _build/prod/rel/mini_bazar/bin/mini_bazar stop
             _build/prod/rel/mini_bazar/bin/mini_bazar daemon
 
-          host: ${{ secrets.HOST }}
-          user: ${{ secrets.USERNAME }} 
-          key: ${{ secrets.SSH_KEY }}
+          
