@@ -12,7 +12,7 @@ jobs:
         with:
           host: ${{ secrets.HOST }}
           user: ${{ secrets.USERNAME }} 
-          password: ${{ secrets.PASSWORD }}
+          key: ${{ secrets.SSH_KEY }}
           script: |
             ls -a
             cd minibazar
