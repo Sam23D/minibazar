@@ -13,7 +13,7 @@ jobs:
           command: |
             ls -a
             cd minibazar
-            git pull origin master
+            git pull origin main
             mix deps.get
             MIX_ENV=prod mix compile
             MIX_ENV=prod mix ecto.migrate
