@@ -13,7 +13,7 @@ jobs:
           command: |
             cd minibazar
             git pull origin master
-            mix deps.get --only prod
+            mix deps.get
             MIX_ENV=prod mix compile
             MIX_ENV=prod mix ecto.migrate
             npm run deploy --prefix ./assets

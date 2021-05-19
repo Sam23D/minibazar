@@ -19,9 +19,10 @@ To start the server
 _build/prod/rel/mini_bazar/bin/mini_bazar start
 _build/prod/rel/mini_bazar/bin/mini_bazar daemon
 ```
-To top the server
+To restart or stop the server
 ```
 _build/prod/rel/mini_bazar/bin/mini_bazar stop
+_build/prod/rel/mini_bazar/bin/mini_bazar start
 ```
 
 
