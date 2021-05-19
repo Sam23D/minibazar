@@ -11,6 +11,7 @@ jobs:
         uses: fifsky/ssh-action@master
         with:
           command: |
+            ls -a
             cd minibazar
             git pull origin master
             mix deps.get
