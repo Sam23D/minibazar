@@ -7,11 +7,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: ls -a via ssh
+      - name: update release  Digital Ocean
         uses: fifsky/ssh-action@master
         with:
           command: |
-            cd minibazar
+            cd mini_bazar
             git pull origin master
             mix deps.get --only prod
             MIX_ENV=prod mix compile
@@ -19,6 +19,7 @@ jobs:
             npm run deploy --prefix ./assets
             mix phx.digest
             POOL_SIZE=4 MIX_ENV=prod mix release --overwrite
+
             _build/prod/rel/mini_bazar/bin/mini_bazar stop
             _build/prod/rel/mini_bazar/bin/mini_bazar daemon
 
