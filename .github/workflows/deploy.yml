@@ -8,11 +8,11 @@ jobs:
 
     steps:
       - name: update release  Digital Ocean
-        uses: actions/setup-elixir@v1
+      - uses: actions/setup-elixir@v1
         with:
           otp-version: '23.0'
           elixir-version: '1.11.4'
-        uses: appleboy/ssh-action@master
+      - uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.HOST }}
           port: ${{ secrets.PORT }}
