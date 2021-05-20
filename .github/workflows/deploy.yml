@@ -7,6 +7,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - uses: actions/setup-elixir
+        with:
+          otp-version: ${{matrix.otp}} 
+          elixir-version: ${{matrix.elixir}}
+
       - name: update release  Digital Ocean
         uses: appleboy/ssh-action@master
         with:
