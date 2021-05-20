@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/setup-elixir
+      - uses: actions/setup-elixir@1.11.4
         with:
           otp-version: ${{matrix.otp}} 
           elixir-version: ${{matrix.elixir}}
