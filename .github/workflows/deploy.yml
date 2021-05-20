@@ -15,17 +15,5 @@ jobs:
           username: ${{ secrets.USERNAME }} 
           key: ${{ secrets.SSH_KEY }}
           script: |
-            cd minibazar
-            git pull origin main
-            asdf global elixir 1.11.3
-            mix deps.get
-            MIX_ENV=prod mix compile
-            MIX_ENV=prod mix ecto.migrate
-            npm run deploy --prefix ./assets
-            mix phx.digest
-            POOL_SIZE=4 MIX_ENV=prod mix release --overwrite
-
-            _build/prod/rel/mini_bazar/bin/mini_bazar stop
-            _build/prod/rel/mini_bazar/bin/mini_bazar daemon
-
+            sh build_release_deploy.sh
           
