@@ -39,6 +39,8 @@
   --blue-500: hsl(197, 68%, 50%);
   --blue-400: hsl(197, 68%, 40%);
   --blue-300: hsl(197, 68%, 30%);
+  
+  --white: #fff;
 
   --color: var(--blue-500);
 
@@ -51,11 +53,15 @@
 }
 
 button{
-  --primary-text: var(--red-500);
+  font-weight: bold;
+  --primary-text: var(--white);
 }
 button i{
   --primary-icon: var(--red-500);
   color: var(--primary-icon);
+}
+input::placeholder{
+  color: var(--color);
 }
 
 /* LiveView specific classes for your customizations */
@@ -193,9 +199,10 @@ section + section{
 
 .afiliates{
   display: flex;
+  padding: 2ch 0;
 }
 .afiliates a{
-  padding: 2ch 0;
+  padding: 2ch;
   text-align: center;
   flex-grow: 1;
 }
@@ -254,7 +261,7 @@ section + section{
 i:first-child{
   font-size: 1.4em;
   padding: .1em .3em;
-  color: var(--primary-text)
+  color: var(--color)
 }
 
 .callout{
@@ -263,7 +270,7 @@ i:first-child{
   padding: 3ch 2ch;
   color: #333;
   
-
+  background-color: #fbfbfb;
 }
 
 .callout span{
@@ -276,7 +283,6 @@ i:first-child{
   flex-wrap: wrap;
 }
 .articles_section article{
-  // flex-basis: 40rem;
   padding: 2ch 0;
   display: flex;
   flex-direction: row;
@@ -286,8 +292,8 @@ i:first-child{
   flex-basis: calc(calc(40rem - 100% ) * 9999 );
   flex-grow: 1;
 }
-.articles_section image{
-  // flex-grow: 1;
+article button{
+  margin-left: 2ch
 }
 .articles_section h3{
   padding: 0 2ch;
