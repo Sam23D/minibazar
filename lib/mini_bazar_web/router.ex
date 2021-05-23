@@ -18,6 +18,9 @@ defmodule MiniBazarWeb.Router do
     pipe_through :browser
 
     live "/", PageLive, :index
+    
+    resources "/subscribers", SubscriberController
+
   end
 
   # Other scopes may use custom stacks.

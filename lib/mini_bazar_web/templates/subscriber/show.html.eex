@@ -1,0 +1,28 @@
+<h1>Show Subscriber</h1>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @subscriber.name %>
+  </li>
+
+  <li>
+    <strong>Lastnames:</strong>
+    <%= @subscriber.lastnames %>
+  </li>
+
+  <li>
+    <strong>Email:</strong>
+    <%= @subscriber.email %>
+  </li>
+
+  <li>
+    <strong>Verified?:</strong>
+    <%= @subscriber.verified? %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.subscriber_path(@conn, :edit, @subscriber) %></span>
+<span><%= link "Back", to: Routes.subscriber_path(@conn, :index) %></span>

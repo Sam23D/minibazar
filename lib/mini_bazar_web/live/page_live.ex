@@ -1,39 +1,39 @@
 defmodule MiniBazarWeb.PageLive do
   use MiniBazarWeb, :live_view
 
+  alias MiniBazar.CRM.Subscriber
+  alias MiniBazar.CRM
+
   @impl true
   def mount(_params, _session, socket) do
-    {:ok, assign(socket, query: "", results: %{})}
+  changeset = Subscriber.changeset( %Subscriber{}, %{} )
+    {:ok, assign(socket, query: "", results: %{}, changeset: changeset)}
   end
 
   @impl true
-  def handle_event("suggest", %{"q" => query}, socket) do
-    {:noreply, assign(socket, results: search(query), query: query)}
+  def handle_event("validate", %{"subscriber" => query}, socket) do
+    # check email not exists in subscribers
+    IO.inspect(query, label: "QRY")
+    
+    {:noreply, socket}
   end
 
   @impl true
-  def handle_event("search", %{"q" => query}, socket) do
-    case search(query) do
-      %{^query => vsn} ->
-        {:noreply, redirect(socket, external: "https://hexdocs.pm/#{query}/#{vsn}")}
-
-      _ ->
-        {:noreply,
-         socket
-         |> put_flash(:error, "No dependencies found matching \"#{query}\"")
-         |> assign(results: %{}, query: query)}
-    end
-  end
-
-  defp search(query) do
-    if not MiniBazarWeb.Endpoint.config(:code_reloader) do
-      raise "action disabled when not in development"
+  def handle_event("register", %{"subscriber" => subscriber_params}, socket) do
+    IO.inspect(subscriber_params, label: "Subscribe email")
+    
+    CRM.create_subscriber(subscriber_params)
+    |> case do
+      {:error, changeset} ->
+        IO.inspect changeset
+        {:noreply, assign(socket, changeset: changeset)}
+      
+      {:ok, subscriber} ->
+        IO.inspect("Usuario creado exitosamente")
+        {:noreply, socket}
     end
 
-    for {app, desc, vsn} <- Application.started_applications(),
-        app = to_string(app),
-        String.starts_with?(app, query) and not List.starts_with?(desc, ~c"ERTS"),
-        into: %{},
-        do: {app, vsn}
+
   end
+
 end

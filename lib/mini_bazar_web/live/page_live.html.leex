@@ -21,7 +21,7 @@
 
 </section>
 
-<section class="articles_section" >
+<section class="articles_section" style="--color: var(--purple-500)" >
   <article>
     <img src="https://placeimg.com/180/180/any">
     <div>
@@ -43,16 +43,26 @@
 <section style="--color: var(--orange-600);" class="callout" >
   <h2><i class="fas fa-envelope"></i>Subscribete!</h2>
   <hr>
-  <p>No te pierdas nuestros Drops, Subscribete! y recibe un <span >cupon de 10% de descuento</span> en tu primer pedido.</p>
+  <p>No te pierdas nuestros Drops, <span >Subscribete! y recibe un cupon de 10% de descuento</span> en tu primer pedido.</p>
 
-  <form >
-    <input type="text" placeholder="Deja tu correo electronico..." >
+  <%= f = form_for @changeset, "#", [phx_change: :validate, phx_submit: :register] %>
+    <%= label f, :Nombre %>
+    <%= text_input f, :name, placeholder: "Dejanos tu nombre..." %>
+    <%= error_tag f, :name %>
+    <%= label f, :Correo %>
+    <%= text_input f, :email, placeholder: "...y un correo electronico al que te enviaremos el cupon." %>
+    <%= error_tag f, :email %>
+    <label for="terms_accepted?"><%= checkbox f, :terms_accepted? %>Aceptar Politicas de privacidad.</p>
+
+    <%= submit "Recibir cupon y aceptar terminos" %>
   </form>
+
   <hr>
 </section>
 
 <section style="--color: var(--yellow-600);" >
   <h2><i class="fas fa-shipping-fast"></i>Encuentranos en</h2>
+  <p>Envios a toda la republica 🇲🇽</p>
   <div class="afiliates" >
     <a href="#ml">Mercado Libre</a>
     <a href="#amazon">Amazon</a>

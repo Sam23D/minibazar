@@ -1,13 +1,19 @@
 use Mix.Config
 
+
+
+database_url = System.get_env("DATABASE_URL")
 # Configure your database
 config :mini_bazar, MiniBazar.Repo,
-  username: "postgres",
-  password: "postgres",
-  database: "mini_bazar_dev",
-  hostname: "localhost",
-  show_sensitive_data_on_connection_error: true,
-  pool_size: 10
+  ssl: true,
+  url: database_url,
+  pool_size: 4
+#  username: "postgres",
+#  password: "postgres",
+#  database: "mini_bazar_dev",
+#  hostname: "localhost",
+#  show_sensitive_data_on_connection_error: true,
+#  pool_size: 10
 
 # For development, we disable any cache and enable
 # debugging and code reloading.
