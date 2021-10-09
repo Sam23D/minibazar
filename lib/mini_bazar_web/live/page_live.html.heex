@@ -9,7 +9,7 @@
       <div class="miniature" ><img src="https://cdn.thingiverse.com/assets/67/6b/4b/4f/52/featured_preview_Mudkip_0.jpg"></div>
       <div class="miniature" ><img src="https://cdn.thingiverse.com/assets/85/d7/b8/5c/8b/featured_preview_Bulbasaur_0.jpg"></div>
     </figure>
-  <div>
+  </div>
 </section>
 
 
@@ -52,10 +52,10 @@
     <%= label f, :Correo %>
     <%= text_input f, :email, placeholder: "...y un correo electronico al que te enviaremos el cupon." %>
     <%= error_tag f, :email %>
-    <label for="terms_accepted?"><%= checkbox f, :terms_accepted? %>Aceptar Politicas de privacidad.</p>
+    <label for="terms_accepted?"><%= checkbox f, :terms_accepted? %>Aceptar Politicas de privacidad.</label>
 
     <%= submit "Recibir cupon y aceptar terminos" %>
-  </form>
+  
 
   <hr>
 </section>
@@ -67,4 +67,4 @@
     <a href="#ml">Mercado Libre</a>
     <a href="#amazon">Amazon</a>
   </div>
-</section >
+</section>

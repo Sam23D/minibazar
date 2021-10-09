@@ -7,6 +7,7 @@ defmodule MiniBazar.Repo.Migrations.CreateSubscribers do
       add :lastnames, :string
       add :email, :string
       add :verified?, :boolean, default: false, null: false
+      add :terms_accepted?, :boolean, default: false
 
       timestamps()
     end

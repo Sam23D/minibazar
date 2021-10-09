@@ -1,9 +1,7 @@
-/* This file is for your main application css. */
 @import "./phoenix.css";
-@import "../node_modules/nprogress/nprogress.css";
 
 :root{
-  
+
   --purple-300: hsl(263, 51%, 75%);
   --purple-400: hsl(263, 51%, 65%);
   --purple-500: hsl(263, 51%, 55%);
@@ -156,7 +154,7 @@ section + section{
 }
 .navbar {
   flex-grow: 1;
- 
+  
 }
 .navbar ul{
   display: flex;
@@ -298,5 +296,4 @@ article button{
 }
 .articles_section h3{
   padding: 0 2ch;
-  // flex-grow: 2;
 }

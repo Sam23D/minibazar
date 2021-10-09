@@ -26,6 +26,20 @@ _build/prod/rel/mini_bazar/bin/mini_bazar start
 ```
 
 
+### Installation
+add this to your .bashrc or .zsh file or just run it before you run your server
+```
+export MINIBAZAR_DATABASE_URL=postgresql://postgres@localhost/mini_bazar_dev
+```
+
+execut on `minibazar/` folder
+```
+mix ecto.create
+mix ecto.migrate
+```
+
+
+
 ## Learn more
 
   * Official website: https://www.phoenixframework.org/

@@ -2,12 +2,14 @@ use Mix.Config
 
 
 
-database_url = System.get_env("DATABASE_URL")
+database_url = System.get_env("MINIBAZAR_DATABASE_URL")
 # Configure your database
 config :mini_bazar, MiniBazar.Repo,
-  ssl: true,
-  url: database_url,
-  pool_size: 4
+      host: "localhost",
+      port: "5432",
+      database: "minibazar_dev",
+      username: "postgres",
+      password: "postgres"
 #  username: "postgres",
 #  password: "postgres",
 #  database: "mini_bazar_dev",
@@ -27,13 +29,8 @@ config :mini_bazar, MiniBazarWeb.Endpoint,
   code_reloader: true,
   check_origin: false,
   watchers: [
-    node: [
-      "node_modules/webpack/bin/webpack.js",
-      "--mode",
-      "development",
-      "--watch-stdin",
-      cd: Path.expand("../assets", __DIR__)
-    ]
+    # Start the esbuild watcher by calling Esbuild.install_and_run(:default, args)
+    esbuild: {Esbuild, :install_and_run, [:default, ~w(--sourcemap=inline --watch)]}
   ]
 
 # ## SSL Support
