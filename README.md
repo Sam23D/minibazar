@@ -1,5 +1,7 @@
 # MiniBazar
 
+![Unit tests](https://github.com/Sam23D/minibazar/actions/workflows//test.yml/badge.svg)
+
 To start your Development server:
 
   * Install dependencies with `mix deps.get`
