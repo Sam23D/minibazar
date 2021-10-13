@@ -50,9 +50,9 @@
                 <div class="flex flex-col sm:flex-row">
                     <a class="mt-3 text-gray-600 hover:underline sm:mx-3 sm:mt-0" href="#">Home</a>
                     <a class="mt-3 text-gray-600 hover:underline sm:mx-3 sm:mt-0" href="#categories">Categories</a>
-                    <a class="mt-3 text-gray-600 hover:underline sm:mx-3 sm:mt-0" href="#subscribe">Subscribe!</a>
                     <a class="mt-3 text-gray-600 hover:underline sm:mx-3 sm:mt-0" href="#shop">Shop</a>
-                    <a class="mt-3 text-gray-600 hover:underline sm:mx-3 sm:mt-0" href="#">About</a>
+                    <a class="mt-3 text-gray-600 hover:underline sm:mx-3 sm:mt-0" href="#subscribe">Subscribe!</a>
+                    <a class="mt-3 text-gray-600 hover:underline sm:mx-3 sm:mt-0" href="#testimonials">Testimonials</a>
                 </div>
             </nav>
             <%= live_render(@conn, MiniBazarWeb.LiveComponents.MainSearchMenu ) %>
@@ -61,8 +61,7 @@
     </header>
     
     <%= @inner_content %>
-
-    <%= render("testimonials.html") %>
+    
     <%= render("footer.html") %>
 
 

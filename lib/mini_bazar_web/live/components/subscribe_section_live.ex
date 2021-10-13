@@ -68,8 +68,6 @@ defmodule MiniBazarWeb.LiveComponents.SubscribeSection do
           <!-- end Card -->
       </div>
       <!-- end SubscribeSection -->
-
-
     """
   end
 
