@@ -4,7 +4,7 @@ defmodule MiniBazarWeb.PageLive do
   alias MiniBazar.CRM.Subscriber
   alias MiniBazar.CRM
 
-
+  alias MiniBazar.PageLivePubsub
 
   @impl true
   def mount(_params, _session, socket) do
@@ -13,8 +13,21 @@ defmodule MiniBazarWeb.PageLive do
   end
 
   @impl true
+  def handle_event("hide_shopcart", %{}, socket) do
+
+    {:noreply, IO.inspect(socket) }
+  end
+
+
+  def handle_event("display_shopcart", %{}, socket) do
+    PageLivePubsub.notify_live_view("shopcart", {__MODULE__, [:display_shopcard, true], []})
+    {:noreply, IO.inspect(socket) }
+  end
+
+  @impl true
   def handle_event("validate", %{"subscriber" => query}, socket) do
     # check email not exists in subscribers
+    IO.inspect(socket, label: "Socket")
     IO.inspect(query, label: "QRY")
 
     {:noreply, socket}

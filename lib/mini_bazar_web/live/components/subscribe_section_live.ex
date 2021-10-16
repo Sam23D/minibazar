@@ -14,6 +14,7 @@ defmodule MiniBazarWeb.LiveComponents.SubscribeSection do
   @impl true
   def handle_event("validate", %{"subscriber" => query}, socket) do
     # check email not exists in subscribers
+    IO.inspect(socket, label: "Socket")
     IO.inspect(query, label: "QRY")
 
     {:noreply, socket}

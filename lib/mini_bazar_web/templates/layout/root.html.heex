@@ -19,7 +19,7 @@
   <body>
 
     <header class="bg-white">    
-        <%= live_render(@conn, MiniBazarWeb.MainNavBarLive ) %>
+        <%= live_render(@conn, MiniBazarWeb.MainNavBarLive, id: "main_navbar" ) %>
         <%= live_render(@conn, MiniBazarWeb.LiveComponents.MainSearchMenu ) %>
         
     </header>
