@@ -23,7 +23,7 @@ secret_key_base =
     You can generate one by calling: mix phx.gen.secret
     """
 
-ssl_key_path = System.get_env("SSL_KEY_PATH") || raise "environment variable SSL_CERT_PATH is missing."
+ssl_key_path = System.get_env("SSL_KEY_PATH") || raise "environment variable SSL_KEY_PATH is missing."
 ssl_cert_path = System.get_env("SSL_CERT_PATH") || raise "environment variable SSL_CERT_PATH is missing."
 ssl_cacert_path = System.get_env("SSL_CACERT_PATH") || raise "environment variable SSL_CACERT_PATH is missing."
 
